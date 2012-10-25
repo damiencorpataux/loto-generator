@@ -24,7 +24,7 @@ class HomeController extends xWebController {
             // Minimum images to create at least one card
             $min_images = $data['row-items']*$data['lines'];
             if (count($data['urls']) < $min_images)
-                throw new xException('Not enough images to create cards');
+                throw new xException("Not enough images to create cards (at least {$min_images} images are needed)");
             // Minimum cards to create
             $min_cards = 1;
             if ($data['cards'] < $min_cards)
