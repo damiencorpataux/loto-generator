@@ -3,6 +3,8 @@
 class HomeController extends xWebController {
 
     function defaultAction() {
+        if (is_null($this->session('1st-time'))) $this->session('1st-time', true);
+        else $this->session('1st-time', true);
         $data = array(
             'cards' => @$this->params['n'] ? $this->params['n'] : 100,
             'header' => @$this->params['header'] ? $this->params['header'] : 'My Lotery!'

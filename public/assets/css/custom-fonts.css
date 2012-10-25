@@ -14,12 +14,3 @@
     font-weight: 400;
     src: local("OFL Sorts Mill Goudy TT Italic"), local("OFLGoudyStMTT-Italic"), url("http://themes.googleusercontent.com/static/fonts/oflsortsmillgoudytt/v4/4zlbkWdiblhTyAxV3yYOK1Map0k-03pf3IKr-TpLv18_BNIuymZ_hD58qNx2bu5M.woff") format("woff");
 }
-
-/**
- * Custom css
- */
-
-h1, h2, h3, h4, h5, h6, h7, h8 {
-    font-family: "OFL Sorts Mill Goudy TT";
-    font-style: italic;
-}
