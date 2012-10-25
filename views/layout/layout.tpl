@@ -35,7 +35,8 @@
                         <span class="icon-bar"></span>
                     </a>
                     <a class="brand" href="<?php echo u() ?>">
-                        Loto cards generator
+                        <img style="position:absolute;top:-75px" src="<?php echo u('assets/img/header-cards') ?>">
+                        <span style="margin-left:200px">Lotery cards generator</span>
                     </a>
                     <!-- Uncomment and modify to add top-right navigation links
                     <div class="nav-collapse pull-right">

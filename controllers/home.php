@@ -3,13 +3,36 @@
 class HomeController extends xWebController {
 
     function defaultAction() {
-        return xView::load('home/index')->render();
+        $data = array(
+            'cards' => @$this->params['n'] ? $this->params['n'] : 100,
+            'header' => @$this->params['header'] ? $this->params['header'] : 'My Lotery!'
+        );
+        return xView::load('home/index', $data)->render();
     }
 
     function cardsAction() {
         $data = array(
-            'num-cards' => 10
+            'lines' => 3,
+            'rows' => 9,
+            'row-items' => 5,
+            'cards' => $this->params['cards'],
+            'header' => $this->params['header'],
+            'urls' => xController::load('upload')->urls()
         );
+        // User input validation
+        try {
+            // Minimum images to create at least one card
+            $min_images = $data['row-items']*$data['lines'];
+            if (count($data['urls']) < $min_images)
+                throw new xException('Not enough images to create cards');
+            // Minimum cards to create
+            $min_cards = 1;
+            if ($data['cards'] < $min_cards)
+                throw new xException('Please enter the number of cards to create');
+        } catch (Exception $e) {
+            xWebFront::messages($e->getMessage(), 'danger');
+            xUtil::redirect(xUtil::url());
+        }
         // HTML Generation
         $html = xView::load('home/cards', $data)->render();
         if (isset($this->params['html'])) die($html);

@@ -43,6 +43,16 @@ class UploadController extends xWebController {
         exit();
     }
 
+    function resetAction() {
+        $this->reset();
+        xWebFront::messages('All images were sucessfully removed', 'success');
+        xUtil::redirect(xUtil::url('', true));
+    }
+
+    function reset() {
+        array_walk($this->files(), function($file) { unlink($file); });
+    }
+
     function files() {
         $folder = $this->getUploadFolder();
         return glob("{$folder}/*");
