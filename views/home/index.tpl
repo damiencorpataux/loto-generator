@@ -46,6 +46,15 @@ $(function() {
                 <h2>1. Upload your images</h2>
                 <p>Drag and drop your images into the box below.</p>
                 <p>Your images sizes must be minimum: 300x300 pixels. They should be all the same size.</p>
+                <div class="btn-group pull-right" style="margin: -8px 0 5px 0">
+                    <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+                        Actions
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo u('upload/reset') ?>" class="btn-danger">Remove all images</a></li>
+                    </ul>
+                </div>
                 <div class="thumbnails">
                     <div id="drop" class="uploader thumbnail span5">
                         <h3>Drop here</h3>
@@ -56,17 +65,8 @@ $(function() {
                         </div>
                     </div>
                 </div>
-                <br>
-                <div class="btn-group">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                    Actions
-                    <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="<?php echo u('upload/reset') ?>" class="btn-danger">Remove all images</a></li>
-                </ul>
-                </div>
             </div>
+            <br>
         </div>
     </li>
 
