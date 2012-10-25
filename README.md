@@ -1,4 +1,4 @@
 loto-generator
 ==============
 
-Loto cards generator
+http://demo.mien.ch/loto/
